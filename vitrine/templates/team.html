@@ -1,0 +1,14 @@
+<div id="wrap-team">
+	<div id="team">
+		<h1>L'équipe</h1>
+		{% for membre in membres %}
+		<div class="membre">
+			<img src="{{ membre.photo.url }}" alt="photo de {{ membre.prenom }} {{ membre.nom }}"/>
+			<div class="membre-bande">
+				<p>{{ membre.prenom }} {{ membre.nom }}</p>
+				<p class="status">{{ membre.status }}</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>

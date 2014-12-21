@@ -1,0 +1,59 @@
+<div id="home">
+	<div id="wrap-home"><!--
+	--><div id="actu">
+			<div class="wrap-title">
+				<h1>Actualités</h1>
+			</div>
+			<div class="wrap-liste-article">
+				<div class="liste-article">{% for article in actus%}<!----><div class="article">
+					<div class="article-image-mask">
+						<img src="{{ article.image.image.url }}"/>
+					</div>
+						<h3>{{ article.titre }}</h3>
+						<div class="wrap-article-content">
+							<div class="article-meta">
+								<div class="article-date">
+									{{ article.date }}
+								</div>
+							</div>
+							<div class="wrap-description">
+								<div class="description">
+										{{ article.contenu }}
+								</div>
+							</div>
+						</div>
+					</div>{% endfor %}
+				</div>
+			</div>
+		</div><!--
+		--><div id="event">
+			<div class="wrap-title">
+				<h1>Événements</h1>
+			</div>
+			<div class="wrap-liste-article">
+				<div class="liste-article">{% for event in events %}<!----><div class="article">
+						<div class="article-image-mask">
+							<img src="{{ event.image.image.url }}"/>
+						</div>
+						<h3>{{ event.titre }}</h3>
+						<div class="wrap-article-content">
+							<div class="article-meta">
+								<div class="article-date">
+									{{ event.date }}
+								</div>
+								<div class="article-lieu">
+									{{ event.lieu }}
+								</div>
+							</div>
+							<div class="wrap-description">
+								<div  class="description">
+								 {{ event.contenu }}
+								</div>
+							</div>
+						</div>
+					</div>{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div id="wrap-skew">
+	<div id="wrap-diapo">
+		<div id="diapo" class="swipe">
+			<div class="swipe-wrap">
+				{% for gallerie in galleries%}
+				<div>
+					<img src="{{gallerie.url_image}}" alt="{{gallerie.titre_image}}"/>
+					<h3>{{gallerie.nom_gallerie}}</h3>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		{% if galleries|length > 1 %}
+		<div id="ctrl-next"></div>
+		<div id="ctrl-prec"></div>
+		{% endif %}
+	</div>
+</div>
