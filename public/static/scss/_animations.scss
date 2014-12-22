@@ -1,0 +1,13 @@
+@import "bourbon/bourbon";
+
+@include keyframes(bounce){
+    0% {
+        @include transform(translateY(0px));
+    }
+    50% {
+        @include transform(translateY(50%));
+    }
+    100% {
+        @include transform(translateY(0px));
+    }
+}

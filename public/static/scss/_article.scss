@@ -1,0 +1,143 @@
+@import "colors";
+@import "dimens";
+@import "bourbon/bourbon";
+
+.article {
+    // @include flex(1);
+    display: inline-block;
+    width: 50%;
+    color: $article-text-color;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0;
+    @media (max-width: $smart-screen){
+        padding: 0;
+        width: 100%;
+    }
+    .article-image-mask{
+        // height: 150px;
+        max-height: 250px;
+        width: 100%;
+        overflow: hidden;
+        img {
+            max-width: 100%;
+            margin: auto;
+            display: block;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 0;
+        }
+    }
+
+    h3 {
+        margin: 0px;
+        padding: 10px;
+        color: $article-title-color;
+        background-color: rgba($article-title-bg-color, 0.0);
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        @media (max-width: 320px){
+            padding: 0;
+        }
+        &::before{
+            content: "";
+            width: 90%;
+            height: 60%;
+            position: absolute;
+            left: 5%;
+            top: 40%;
+            z-index: -1;
+            border-radius: 120px/12px;
+            box-shadow: 0px 0px 10px black;
+            @media (max-width: 320px){
+                width: 95%;
+                left: 2.5%;
+            }
+        }
+        &::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $actu-bg-color;
+            border-top: 3px solid $logo-red2;
+            box-sizing: border-box;
+            position: absolute;
+            left: 0%;
+            top: 0;
+            z-index: -1;
+        }
+    }
+    .wrap-article-content {
+        position: relative;
+        z-index: 5;
+        padding-left: 10%;
+        padding-right: 10%;
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(stretch);
+        @media (max-width: $smart-screen){
+            @include flex-direction(column);
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-bottom: 42px;
+        }
+        .article-meta {
+            @include flex(1);
+            @include display(flex);
+            @include flex-wrap(wrap);
+            @include align-items(stretch);
+            @include flex-direction(column);
+            @media (max-width: $smart-screen){
+                @include flex-direction(row);
+            }
+            div {
+                color: $article-meta-color;
+                text-align: center;
+                @include flex(1);
+                margin: 10px;
+                position: relative;
+                @media (max-width: $smartphone){
+                    margin-bottom: 0px;
+                }
+            }
+            .article-date {
+                color: $article-date-color;
+                text-align: center;
+                @media (max-width: $smart-screen){
+                    text-align: right;
+                }
+            }
+        }
+        .wrap-description {
+            @include flex(2);
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                top: -1%;
+                left: 0px;
+                width: 1px;
+                height: 102%;
+                background-color: $article-border;
+                @media (max-width: $smart-screen){
+                    width: 100%;
+                    height: 1px;
+                    top: -5px;
+                    left: 0%;
+                }
+                @media (max-width: $smartphone){
+                    top: 0px;
+                    height: 0px;
+                }
+            }
+            .description {
+                margin: 10px;
+                text-align: justify;
+                position: relative;
+
+            }
+        }
+    }
+}

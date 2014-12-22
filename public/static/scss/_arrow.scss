@@ -1,0 +1,41 @@
+.arrow {
+    position: absolute;
+    bottom: 10%;
+    left: 80%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    #head {
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 11%;
+            width: 20px;
+            height: 100%;
+            background-color: #000;
+            @include transform(rotate(-45deg));
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 11%;
+            width: 20px;
+            height: 100%;
+            background-color: #000;
+            @include transform(rotate(45deg));
+        }
+    }
+    #shaft {
+        position: absolute;
+        top: -50%;
+        left: 40%;
+        width: 20px;
+        height: 100%;
+        background-color: #000;
+    }
+}

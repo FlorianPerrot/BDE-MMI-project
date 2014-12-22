@@ -1,0 +1,61 @@
+$logo-red1: #e93e3d;
+$logo-red2: #c23432;
+$logo-mt-base: #35455a;
+$logo-singe1: #844d25;
+
+$nav-bar-color : darken(rgba($logo-red2, 1.0), 8%);
+$nav-bs-color : rgba(0, 0, 0, 1.0);
+$nav-items-color: rgb(0,0,0);
+$nav-items-border-color: rgba(42, 42, 42 ,1.0);
+
+
+
+$bg: #efefef;
+/*
+$title-color: $logo-singe1;
+$article-text-color: $logo-red1;
+$article-title-color: $logo-mt-base;
+$article-date-color: $logo-red2;
+$article-like-color: black;
+*/
+
+$main-bs-color: rgba(0,0,0,1.0);
+/**
+  * Actu
+  * * * * */
+// $actu-bg-color: rgba(220,220,220, 1.0);
+$actu-bg-color: rgba(255,255,255, 1.0);
+
+/**
+  * Event
+  * * * * */
+$event-bg-color: $actu-bg-color;
+
+/**
+  * Article
+  * * * * * */
+$title-color: rgb(42,42,42);
+$title-bg-color: $logo-red2;
+$article-border: darken($logo-mt-base, 10%);
+$article-bg-color: rgba($logo-red2, 1.0);
+$article-text-color: $title-color;
+$article-title-color: darken($title-color, 70%);
+$article-title-bg-color: rgb(42,42,42);
+$article-date-color: $title-color;
+$article-meta-color: $title-color;
+$article-description-color: rgba(255,255,255,1.0);
+
+
+/**
+  * Diapo
+  * * * * * * * * * */
+$diapo-bg-color: rgba(42,42,42,1.0);
+
+
+
+/**
+  * Footer
+  * * * * * * * * * * * */
+$footer-bg-color: rgba(100,100,100,1.0);
+
+$bde_info_text_color: rgb(255,255,255);
