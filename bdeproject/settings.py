@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
+DEPLOYMENT_URL = 'bde-mmi.alwaysdata.net'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -29,7 +29,7 @@ TEMPLATE_DIRS = (
 
 ALLOWED_HOSTS = [
 	'127.0.0.1:8000',
-	'bde-mmi.alwaysdata.net',
+	DEPLOYMENT_URL,
 ]
 
 
@@ -89,9 +89,10 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "public/static")
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "public/upload")
+
 if DEBUG:
-    STATIC_URL = 'http://bde-mmi.alwaysdata.net/static/'
-    MEDIA_URL = 'http://bde-mmi.alwaysdata.net/upload/'
-else:
     STATIC_URL = 'http://localhost:8888/static/'
     MEDIA_URL = 'http://localhost:8888/upload/'
+else:
+    STATIC_URL = DEPLOYMENT_URL+'/static/'
+    MEDIA_URL = DEPLOYMENT_URL+'/upload/'
