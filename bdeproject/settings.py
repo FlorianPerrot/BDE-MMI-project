@@ -88,6 +88,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "public/static")
-STATIC_URL = 'http://bde-mmi.alwaysdata.net/static/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "public/upload")
-MEDIA_URL = 'http://bde-mmi.alwaysdata.net/upload/'
+if DEBUG:
+    STATIC_URL = 'http://bde-mmi.alwaysdata.net/static/'
+    MEDIA_URL = 'http://bde-mmi.alwaysdata.net/upload/'
+else:
+    STATIC_URL = 'http://localhost:8888/static/'
+    MEDIA_URL = 'http://localhost:8888/upload/'
