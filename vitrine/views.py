@@ -36,9 +36,9 @@ def json(request, json, tri):
                 return JsonResponse(images_to_dico(Gallerie.objects.filter(nom = tri)[0].images.all()))
             else:
                 return JsonResponse([])
-            
-            
-            
+
+
+
     return JsonResponse([])
 
 def accueil(request):
@@ -50,7 +50,7 @@ def accueil(request):
                                             "events":events[:2],
                                             "galleries":galleries,
                                             "membres":Membre.objects.all().order_by('rang','nom'),
-                                            "contact":Contact.objects.all()[0]})
+                                            "contact":Contact.objects.all()[:1]})
 
 
 def news_to_dico(models):
@@ -67,7 +67,7 @@ def news_to_dico(models):
         else:
                         dico.update({"image":""})
         dicoArray += [dico]
-        
+
     return dicoArray
 
 def contact_to_dico(models):
@@ -82,12 +82,12 @@ def galerie_to_dico(galleries):
             imageTitre = image.titre
             if imageTitre is None:
                 imageTitre = ""
-            images += [{"titre":imageTitre,"url":image.image.url}]       
+            images += [{"titre":imageTitre,"url":image.image.url}]
         dico.update({"nom":gallerie.nom})
         dico.update({"images":images})
         gallerieArray += [dico]
     return gallerieArray
-        
+
 def images_to_dico(images):
     imageArray = []
     for image in images:
