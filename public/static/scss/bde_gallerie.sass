@@ -1,0 +1,45 @@
+@import "dimens"
+@import "bourbon/bourbon"
+@import "colors"
+
+body
+  margin: 100px 0 0 0
+
+header
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 10
+    nav
+        position: relative
+        top: 0
+        padding-top: 0
+        box-shadow: 0 0 4px rgba($nav-bs-color, 0.0)
+        background-color: rgba($nav-bar-color, 1)
+        @include transition(background-color 0.3s linear, box-shadow 0.3s linear)
+        text-align: right
+        a
+            height: $navigation-height
+            line-height: $navigation-height
+            color: $nav-items-color
+            padding: 20px 3%
+            margin-right: 10px
+            display: inline-block
+            position: relative
+
+            img
+                margin: 0
+                padding: 0
+                height: inherit
+                display: inline
+                position: relative
+                top: 0
+                left: 0
+
+            span
+              display: none
+
+.nav-bar-colored
+    background-color: $nav-bar-color
+    box-shadow: 0 0 4px $nav-bs-color
+    @include transition(background-color 0.3s linear, box-shadow 0.3s linear)
