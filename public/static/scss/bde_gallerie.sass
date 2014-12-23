@@ -4,6 +4,7 @@
 
 body
   margin: 100px 0 0 0
+  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif
 
 header
     position: fixed
@@ -43,3 +44,25 @@ header
     background-color: $nav-bar-color
     box-shadow: 0 0 4px $nav-bs-color
     @include transition(background-color 0.3s linear, box-shadow 0.3s linear)
+
+#main
+    text-align:center
+
+    .membre-bande
+        background-color: rgb(255,255,255)
+        &::after
+            content: ""
+            width: 58%
+            height: 3px
+            background-color: $logo-red2
+            position: absolute
+            left: 21%
+            top: 3px
+
+    #gallerie
+        width:100%
+
+        .gallerie-image
+
+            img
+                max-width:100%

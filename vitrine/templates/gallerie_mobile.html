@@ -22,14 +22,16 @@
       <a href="#contact"><img src="{{ STATIC_URL }}img/ic_public.svg"/><span>Contacte</span></a>
     </nav>
     {% endblock %}
-  </header
+  </header>
   <div id="main">
-    <h1>{{gallerie.nom}}</h1>
-    {% for image in gallerie.images.all %}
-      <div>
-        <img src="{{image.image.url}}"/>
-      </div>
-    {%endfor%}
+    <h1 class="membre-bande">{{gallerie.nom}}</h1>
+    <div id="gallerie">
+      {% for image in gallerie.images.all %}
+        <div class="gallerie-image">
+          <img src="{{image.image.url}}"/>
+        </div>
+      {%endfor%}
+    </div>
   </div>
 
 </body>
