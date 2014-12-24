@@ -8,23 +8,17 @@
   <title>BDE MMI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/bde_gallerie.css" charset="utf-8">
-  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="{{ STATIC_URL }}js/swipe.js"></script>
-  <script src="{{ STATIC_URL }}js/bde.js"></script>
 </head>
 <body>
   <header id="navigation">
     {% block header %}
     <nav>
-      <a href="#wrap-home"><img src="{{ STATIC_URL }}img/ic_my_library_books.svg"/><span>News</span></a>
-      <a href="#wrap-diapo"><img src="{{ STATIC_URL }}img/ic_collections.svg"/><span>Gallerie</span></a>
-      <a href="#team"><img src="{{ STATIC_URL }}img/ic_people.svg"/><span>L'équipe</span></a>
-      <a href="#contact"><img src="{{ STATIC_URL }}img/ic_public.svg"/><span>Contacte</span></a>
+      <a id="back" href="{% url 'vitrine:accueil' %}"><img src="{{ STATIC_URL }}img/arrow.svg"/></a>
+      <h1>{{gallerie.nom}}</h1>
     </nav>
     {% endblock %}
   </header>
   <div id="main">
-    <h1 class="membre-bande">{{gallerie.nom}}</h1>
     <div id="gallerie">
       {% for image in gallerie.images.all %}
         <div class="gallerie-image">

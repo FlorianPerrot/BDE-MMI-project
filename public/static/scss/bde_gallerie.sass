@@ -1,9 +1,10 @@
 @import "dimens"
 @import "bourbon/bourbon"
 @import "colors"
+@import "animations"
 
 body
-  margin: 100px 0 0 0
+  margin: 70px 0 0 0
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif
 
 header
@@ -18,27 +19,24 @@ header
         box-shadow: 0 0 4px rgba($nav-bs-color, 0.0)
         background-color: rgba($nav-bar-color, 1)
         @include transition(background-color 0.3s linear, box-shadow 0.3s linear)
-        text-align: right
-        a
+        text-align: center
+
+        >*
             height: $navigation-height
-            line-height: $navigation-height
-            color: $nav-items-color
-            padding: 20px 3%
-            margin-right: 10px
-            display: inline-block
-            position: relative
+            padding: 10px 3%
+            margin: 0
+
+        #back
+            float: left
 
             img
-                margin: 0
-                padding: 0
-                height: inherit
-                display: inline
-                position: relative
-                top: 0
-                left: 0
+                height: $navigation-height
+                @include transform(rotate(90deg))
 
-            span
-              display: none
+        h1
+            line-height: $navigation-height
+            color: $nav-items-color
+
 
 .nav-bar-colored
     background-color: $nav-bar-color
