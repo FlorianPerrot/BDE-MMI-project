@@ -4,7 +4,7 @@
 			<div class="swipe-wrap">
 				{% for gallerie in galleries%}
 				<div>
-					<img src="{{gallerie.url_image}}" alt="{{gallerie.titre_image}}"/>
+					<a href="{% url 'vitrine:gallerie' gallerie.nom_gallerie %}"><img src="{{gallerie.url_image}}" alt="{{gallerie.titre_image}}"/></a>
 					<h3>{{gallerie.nom_gallerie}}</h3>
 				</div>
 				{% endfor %}

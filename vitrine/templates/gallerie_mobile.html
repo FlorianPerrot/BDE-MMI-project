@@ -22,7 +22,7 @@
     <div id="gallerie">
       {% for image in gallerie.images.all %}
         <div class="gallerie-image">
-          <img src="{{image.image.url}}"/>
+          <a href="{{image.image.url}}"><img src="{{image.image.url}}"/></a>
         </div>
       {%endfor%}
     </div>
