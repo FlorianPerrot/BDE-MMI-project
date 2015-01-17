@@ -1,7 +1,7 @@
 import datetime
 from django.shortcuts import render
 from vitrine.models import Actu, Event, Contact, Membre, Galerie
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.utils import timezone, simplejson
 from django.shortcuts import render
 from django.views.decorators.cache import never_cache
@@ -52,6 +52,14 @@ def accueil(request):
                                             "membres":Membre.objects.all().order_by('rang','nom'),
                                             "contact":Contact.objects.all()[:1]})
 
+
+def galerie(request, nom_galerie):
+    galerie = Galerie.objects.filter(nom = nom_galerie)
+    print(len(galerie))
+    if(len(galerie)>0):
+        return render(request, "galerie_mobile.html", {"galerie":galerie[0]})
+    else:
+        raise Http404
 
 def news_to_dico(models):
     dicoArray = []

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <meta charset="utf-8">
+  <title>BDE MMI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/bde_galerie.css" charset="utf-8">
+</head>
+<body>
+  <header id="navigation">
+    {% block header %}
+    <nav>
+      <a id="back" href="{% url 'vitrine:accueil' %}">
+        <img src="{{ STATIC_URL }}img/arrow.svg"/>
+      </a>
+      <h1>{{galerie.nom}}</h1>
+    </nav>
+    {% endblock %}
+  </header>
+  <div id="main">
+    <div id="galerie">
+      {% for image in galerie.images.all %}
+        <div class="galerie-image">
+          <a href="{{image.image.url}}"><img src="{{image.image.url}}"/></a>
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+
+</body>
+</html>

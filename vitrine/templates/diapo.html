@@ -4,15 +4,17 @@
 			<div class="swipe-wrap">
 				{% for galerie in galeries%}
 				<div>
-					<img src="{{galerie.url_image}}" alt="{{galerie.titre_image}}"/>
+
+					<a href="{% url 'vitrine:galerie' galerie.nom_galerie %}">
+						<img src="{{galerie.url_image}}" alt="{{galerie.titre_image}}"/></a>
 					<h3>{{galerie.nom_galerie}}</h3>
 				</div>
 				{% endfor %}
 			</div>
 		</div>
 		{% if galeries|length > 1 %}
-		<div id="ctrl-next"></div>
-		<div id="ctrl-prec"></div>
+		<div id="ctrl-next" class="hidden-phone"></div>
+		<div id="ctrl-prec" class="hidden-phone"></div>
 		{% endif %}
 	</div>
 </div>
