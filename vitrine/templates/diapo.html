@@ -2,15 +2,15 @@
 	<div id="wrap-diapo">
 		<div id="diapo" class="swipe">
 			<div class="swipe-wrap">
-				{% for gallerie in galleries%}
+				{% for galerie in galeries%}
 				<div>
-					<img src="{{gallerie.url_image}}" alt="{{gallerie.titre_image}}"/>
-					<h3>{{gallerie.nom_gallerie}}</h3>
+					<img src="{{galerie.url_image}}" alt="{{galerie.titre_image}}"/>
+					<h3>{{galerie.nom_galerie}}</h3>
 				</div>
 				{% endfor %}
 			</div>
 		</div>
-		{% if galleries|length > 1 %}
+		{% if galeries|length > 1 %}
 		<div id="ctrl-next"></div>
 		<div id="ctrl-prec"></div>
 		{% endif %}

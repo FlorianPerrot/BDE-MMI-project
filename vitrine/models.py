@@ -5,8 +5,8 @@ from datetime import datetime
 
 class Image(models.Model):
     titre = models.CharField(max_length=200, null=True)
-    image = models.ImageField(upload_to='gallerie')
-    
+    image = models.ImageField(upload_to='galerie')
+
     def apercu(self):
         return u'<img style="width:100px" src="{0}" />'.format(self.image.url)
     apercu.allow_tags = True
@@ -15,7 +15,7 @@ class Image(models.Model):
         if self.titre == None :
             return u'Image {0}'.format(str(self.id))
         return self.titre
-    
+
 class Actu (models.Model):
     titre = models.CharField(max_length=200)
     contenu = models.TextField()
@@ -30,7 +30,7 @@ class Actu (models.Model):
 
     def __unicode__(self):
         return u'{0} - {1}'.format(self.titre,timezone.localtime(self.date).strftime("%d/%m/%Y %H:%M"))
-    
+
 class Event(models.Model):
     titre = models.CharField(max_length=200)
     contenu = models.TextField()
@@ -49,18 +49,18 @@ class Event(models.Model):
         acroche = ""
         if self.date < timezone.now():
             acroche = "eu "
-        return u'{0} - A {1}lieu le {2} - publié le {3}'.format(self.titre, acroche, timezone.localtime(self.date).strftime("%d/%m/%Y %H:%M"), timezone.localtime(self.date_ajout).strftime("%d/%m/%Y %H:%M")) 
+        return u'{0} - A {1}lieu le {2} - publié le {3}'.format(self.titre, acroche, timezone.localtime(self.date).strftime("%d/%m/%Y %H:%M"), timezone.localtime(self.date_ajout).strftime("%d/%m/%Y %H:%M"))
 
 class Contact(models.Model):
     email = models.EmailField()
     adresse = models.CharField(max_length=200)
     lien_facebook = models.URLField()
     lien_instagram = models.URLField()
-    
-    def __unicode__(self):
-        return self.email+" - "+self.adresse 
 
-class Gallerie(models.Model):
+    def __unicode__(self):
+        return self.email+" - "+self.adresse
+
+class Galerie(models.Model):
     nom = models.CharField(max_length=200,primary_key=True)
     images = models.ManyToManyField(Image)
 
@@ -70,7 +70,7 @@ class Gallerie(models.Model):
             apercu += image.apercu()
         return apercu
     apercu.allow_tags = True
-            
+
     def __unicode__(self):
         return self.nom
 
