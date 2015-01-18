@@ -18,7 +18,7 @@
 							</div>
 							<div class="wrap-description">
 								<div class="description">
-										{{ article.contenu }}
+										{{ article.contenu|urlize|linebreaksbr }}
 								</div>
 							</div>
 						</div>
@@ -39,7 +39,7 @@
 						<div class="wrap-article-content">
 							<div class="article-meta">
 								<div class="article-date">
-									{{ event.date }}
+									{{ event.date|date:"j F o G:i" }}
 								</div>
 								<div class="article-lieu">
 									{{ event.lieu }}
@@ -47,7 +47,7 @@
 							</div>
 							<div class="wrap-description">
 								<div  class="description">
-								 {{ event.contenu }}
+								 {{ event.contenu|urlize|linebreaksbr }}
 								</div>
 							</div>
 						</div>
