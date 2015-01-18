@@ -79,7 +79,7 @@ def news_to_dico(models):
     return dicoArray
 
 def contact_to_dico(models):
-    return {"email":models[0].email,"adresse":models[0].adresse,"lien_facebook":models[0].lien_facebook,"lien_instagram":models[0].lien_instagram}
+    return {"email":models[0].email,"adresse":models[0].adresse,"id_facebook":models[0].id_facebook,"profile_instagram":models[0].profile_instagram}
 
 def galerie_to_dico(galeries):
     galerieArray = []

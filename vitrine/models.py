@@ -54,8 +54,8 @@ class Event(models.Model):
 class Contact(models.Model):
     email = models.EmailField()
     adresse = models.CharField(max_length=200)
-    lien_facebook = models.URLField()
-    lien_instagram = models.URLField()
+    id_facebook = models.IntegerField()
+    profile_instagram = models.CharField(max_length=200)
 
     def __unicode__(self):
         return self.email+" - "+self.adresse

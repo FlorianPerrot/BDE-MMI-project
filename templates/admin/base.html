@@ -21,7 +21,7 @@
     <!-- Header -->
     <div id="header">
         <div id="branding">
-		<img style="float:left;width:70px;padding:0 5px;" src="{{ STATIC_URL }}img/logo-bde.svg" />
+		      <a href="{% url 'vitrine:accueil' %}"><img style="float:left;width:70px;padding:0 5px;" src="{{ STATIC_URL }}img/logo-bde.svg" /></a>
         	<h1 id="site-name">Administration du BDE</h1>
         </div>
         {% if user.is_active and user.is_staff %}
