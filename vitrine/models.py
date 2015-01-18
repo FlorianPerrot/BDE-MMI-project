@@ -54,7 +54,7 @@ class Event(models.Model):
 class Contact(models.Model):
     email = models.EmailField()
     adresse = models.CharField(max_length=200)
-    id_facebook = models.IntegerField()
+    id_facebook = models.CharField(max_length=200)
     profile_instagram = models.CharField(max_length=200)
 
     def __unicode__(self):

@@ -50,7 +50,7 @@ def accueil(request):
                                             "events":events[:2],
                                             "galeries":galeries,
                                             "membres":Membre.objects.all().order_by('rang','nom'),
-                                            "contact":Contact.objects.all()[:1]})
+                                            "contacts":Contact.objects.all()[:1]})
 
 
 def galerie(request, nom_galerie):

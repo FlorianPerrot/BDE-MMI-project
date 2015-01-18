@@ -1,5 +1,5 @@
 <div id="contact">
-	{% if contact|length > 0 %}
+	{% for contact in contacts %}
 	<div id="social"><!--
 	--><div>
 			<a href="https://www.facebook.com/profile.php?id={{ contact.id_facebook }}"><img src="{{ STATIC_URL }}img/fb.svg" alt="Page Facebook"></a>
@@ -11,7 +11,7 @@
 			<a href="#"><img src="{{ STATIC_URL }}img/get_google_play.svg" alt="Obtenir l'application android"></a>
 		</div><!--
 		--></div>
-	{% endif %}
+	{% endfor %}
 	<div id="bde_info">
 		Le BDE vous accueil tous les jours à l'IUT 1! :D
 	</div>
